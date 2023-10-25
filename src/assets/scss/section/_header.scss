@@ -9,12 +9,18 @@
     padding: 1rem;
 
     .header__logo{
+        @media (max-width:800px) {
+            font-size: 2rem;
+        }
         font-size: 0.9rem;
         text-align: center;
         text-transform: uppercase;
         line-height: 1;
     
         em{
+            @media (max-width:800px) {
+                font-size: 1rem;
+            }
             font-size:10px;
             display: block;
             color: var(--black200);
@@ -90,6 +96,7 @@ li{
     @media (max-width:800px) {
         display: block;
     }
+
     span{
         display: block;
         width: 40px;

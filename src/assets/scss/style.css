@@ -177,10 +177,22 @@ img {
   line-height: 1;
 }
 
+@media (max-width: 800px) {
+  .header__inner .header__logo {
+    font-size: 2rem;
+  }
+}
+
 .header__inner .header__logo em {
   font-size: 10px;
   display: block;
   color: var(--black200);
+}
+
+@media (max-width: 800px) {
+  .header__inner .header__logo em {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 800px) {
@@ -292,5 +304,204 @@ img {
   bottom: 6px;
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
+}
+
+#intro {
+  height: 100vh;
+}
+
+.intro__inner {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 16px;
+}
+
+@media (max-width: 800px) {
+  .intro__inner {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.intro__inner .intro__title {
+  font-size: 10vw;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 800;
+  white-space: nowrap;
+  text-indent: -0.5vw;
+  letter-spacing: -0.3vw;
+}
+
+@media (max-width: 320px) {
+  .intro__inner .intro__title {
+    display: none;
+  }
+}
+
+.intro__inner .intro__text {
+  width: 100%;
+  height: 40vh;
+  background-color: var(--black);
+  color: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.intro__inner .text {
+  font-size: 3vw;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: all-scroll;
+}
+
+@media (max-width: 800px) {
+  .intro__inner .text {
+    font-size: 24px;
+  }
+}
+
+.intro__inner .img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media (max-width: 320px) {
+  .intro__inner .img {
+    width: 20vh;
+    height: 20vh;
+  }
+}
+
+.intro__inner:hover .text {
+  opacity: 10%;
+}
+
+.intro__inner:hover .img {
+  -webkit-filter: grayscale(20%);
+          filter: grayscale(20%);
+}
+
+.intro__lines {
+  width: 100%;
+}
+
+.intro__lines .line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--black);
+  margin-bottom: 0.5vw;
+}
+
+.intro__lines .line:nth-child(1) {
+  height: 1px;
+}
+
+.intro__lines .line:nth-child(2) {
+  height: 2px;
+}
+
+.intro__lines .line:nth-child(3) {
+  height: 5px;
+}
+
+.intro__lines .line:nth-child(4) {
+  height: 9px;
+}
+
+.intro__lines .line:nth-child(5) {
+  height: 13px;
+}
+
+.intro__lines .line:nth-child(6) {
+  height: 17px;
+}
+
+.intro__lines .line:nth-child(7) {
+  height: 25px;
+}
+
+.intro__lines.bottom .line {
+  margin-top: 0.5vw;
+  margin-bottom: 0;
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .intro__lines.bottom .line {
+    display: block;
+  }
+}
+
+.intro__lines.bottom .line::nth-child(1) {
+  height: 25px;
+}
+
+.intro__lines.bottom .line::nth-child(2) {
+  height: 17px;
+}
+
+.intro__lines.bottom .line::nth-child(3) {
+  height: 13px;
+}
+
+.intro__lines.bottom .line::nth-child(4) {
+  height: 9px;
+}
+
+.intro__lines.bottom .line::nth-child(5) {
+  height: 5px;
+}
+
+.intro__lines.bottom .line::nth-child(6) {
+  height: 2px;
+}
+
+.intro__lines.bottom .line::nth-child(7) {
+  height: 1px;
 }
 /*# sourceMappingURL=style.css.map */
