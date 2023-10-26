@@ -1,120 +1,53 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
-import port01 from "../assets/img/about.jpg";
+import { portText } from "../constants";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const portText = [
-    {
-        num:"01",
-        title:"어워드에도 올라간 포트폴리오",
-        desc:"라마 디자인을 통해 자신의 스킬을 가장 멋지게 표현한 포트폴리오입니다.가로 모드와 세로 모드는 매우 인상적이며 특히 리액트와 비트를 이용하여 제작한 것은 더욱 놀랍습니다.이 사이트는 awwwards.com에도 인정받아 올라간 포트폴리오입니다. 확실히 그의 뛰어난 디자인 스킬과 기술력이 빛을 발휘한 결과물인 것 같습니다.",
-        img:port01,
-        view:"http://2023-subin-vite.netlify.app",
-        code:"https://github.com/subin313/port2023-vite",
-        name:"포트폴리오"
-        
-    },
-    {
-        num:"02",
-        title:"어워드에도 올라간 포트폴리오",
-        desc:"라마 디자인을 통해 자신의 스킬을 가장 멋지게 표현한 포트폴리오입니다.가로 모드와 세로 모드는 매우 인상적이며 특히 리액트와 비트를 이용하여 제작한 것은 더욱 놀랍습니다.이 사이트는 awwwards.com에도 인정받아 올라간 포트폴리오입니다. 확실히 그의 뛰어난 디자인 스킬과 기술력이 빛을 발휘한 결과물인 것 같습니다.",
-        img:port01,
-        view:"http://2023-subin-vite.netlify.app",
-        code:"https://github.com/subin313/port2023-vite",
-        name:"포트폴리오"
-        
-    },
-    {
-        num:"03",
-        title:"어워드에도 올라간 포트폴리오",
-        desc:"라마 디자인을 통해 자신의 스킬을 가장 멋지게 표현한 포트폴리오입니다.가로 모드와 세로 모드는 매우 인상적이며 특히 리액트와 비트를 이용하여 제작한 것은 더욱 놀랍습니다.이 사이트는 awwwards.com에도 인정받아 올라간 포트폴리오입니다. 확실히 그의 뛰어난 디자인 스킬과 기술력이 빛을 발휘한 결과물인 것 같습니다.",
-        img:port01,
-        view:"http://2023-subin-vite.netlify.app",
-        code:"https://github.com/subin313/port2023-vite",
-        name:"포트폴리오"
-        
-    },
-    {
-        num:"04",
-        title:"어워드에도 올라간 포트폴리오",
-        desc:"라마 디자인을 통해 자신의 스킬을 가장 멋지게 표현한 포트폴리오입니다.가로 모드와 세로 모드는 매우 인상적이며 특히 리액트와 비트를 이용하여 제작한 것은 더욱 놀랍습니다.이 사이트는 awwwards.com에도 인정받아 올라간 포트폴리오입니다. 확실히 그의 뛰어난 디자인 스킬과 기술력이 빛을 발휘한 결과물인 것 같습니다.",
-        img:port01,
-        view:"http://2023-subin-vite.netlify.app",
-        code:"https://github.com/subin313/port2023-vite",
-        name:"포트폴리오"
-        
-    },
-    {
-        num:"05",
-        title:"어워드에도 올라간 포트폴리오",
-        desc:"라마 디자인을 통해 자신의 스킬을 가장 멋지게 표현한 포트폴리오입니다.가로 모드와 세로 모드는 매우 인상적이며 특히 리액트와 비트를 이용하여 제작한 것은 더욱 놀랍습니다.이 사이트는 awwwards.com에도 인정받아 올라간 포트폴리오입니다. 확실히 그의 뛰어난 디자인 스킬과 기술력이 빛을 발휘한 결과물인 것 같습니다.",
-        img:port01,
-        view:"http://2023-subin-vite.netlify.app",
-        code:"https://github.com/subin313/port2023-vite",
-        name:"포트폴리오"
-        
-    },
-    {
-        num:"06",
-        title:"어워드에도 올라간 포트폴리오",
-        desc:"라마 디자인을 통해 자신의 스킬을 가장 멋지게 표현한 포트폴리오입니다.가로 모드와 세로 모드는 매우 인상적이며 특히 리액트와 비트를 이용하여 제작한 것은 더욱 놀랍습니다.이 사이트는 awwwards.com에도 인정받아 올라간 포트폴리오입니다. 확실히 그의 뛰어난 디자인 스킬과 기술력이 빛을 발휘한 결과물인 것 같습니다.",
-        img:port01,
-        view:"http://2023-subin-vite.netlify.app",
-        code:"https://github.com/subin313/port2023-vite",
-        name:"포트폴리오"
-        
-    },
-    {
-        num:"07",
-        title:"어워드에도 올라간 포트폴리오",
-        desc:"라마 디자인을 통해 자신의 스킬을 가장 멋지게 표현한 포트폴리오입니다.가로 모드와 세로 모드는 매우 인상적이며 특히 리액트와 비트를 이용하여 제작한 것은 더욱 놀랍습니다.이 사이트는 awwwards.com에도 인정받아 올라간 포트폴리오입니다. 확실히 그의 뛰어난 디자인 스킬과 기술력이 빛을 발휘한 결과물인 것 같습니다.",
-        img:port01,
-        view:"http://2023-subin-vite.netlify.app",
-        code:"https://github.com/subin313/port2023-vite",
-        name:"포트폴리오"
-        
-    },
-    {
-        num:"08",
-        title:"어워드에도 올라간 포트폴리오",
-        desc:"라마 디자인을 통해 자신의 스킬을 가장 멋지게 표현한 포트폴리오입니다.가로 모드와 세로 모드는 매우 인상적이며 특히 리액트와 비트를 이용하여 제작한 것은 더욱 놀랍습니다.이 사이트는 awwwards.com에도 인정받아 올라간 포트폴리오입니다. 확실히 그의 뛰어난 디자인 스킬과 기술력이 빛을 발휘한 결과물인 것 같습니다.",
-        img:port01,
-        view:"http://2023-subin-vite.netlify.app",
-        code:"https://github.com/subin313/port2023-vite",
-        name:"포트폴리오"
-        
-    },
-    {
-        num:"09",
-        title:"어워드에도 올라간 포트폴리오",
-        desc:"라마 디자인을 통해 자신의 스킬을 가장 멋지게 표현한 포트폴리오입니다.가로 모드와 세로 모드는 매우 인상적이며 특히 리액트와 비트를 이용하여 제작한 것은 더욱 놀랍습니다.이 사이트는 awwwards.com에도 인정받아 올라간 포트폴리오입니다. 확실히 그의 뛰어난 디자인 스킬과 기술력이 빛을 발휘한 결과물인 것 같습니다.",
-        img:port01,
-        view:"http://2023-subin-vite.netlify.app",
-        code:"https://github.com/subin313/port2023-vite",
-        name:"포트폴리오"
-        
-    },
-    {
-        num:"10",
-        title:"어워드에도 올라간 포트폴리오",
-        desc:"라마 디자인을 통해 자신의 스킬을 가장 멋지게 표현한 포트폴리오입니다.가로 모드와 세로 모드는 매우 인상적이며 특히 리액트와 비트를 이용하여 제작한 것은 더욱 놀랍습니다.이 사이트는 awwwards.com에도 인정받아 올라간 포트폴리오입니다. 확실히 그의 뛰어난 디자인 스킬과 기술력이 빛을 발휘한 결과물인 것 같습니다.",
-        img:port01,
-        view:"http://2023-subin-vite.netlify.app",
-        code:"https://github.com/subin313/port2023-vite",
-        name:"포트폴리오"
-        
-    },
-]
 
 const Port = () => {
+
+    const horizontalRef = useRef(null);
+    const sectionsRef = useRef([]);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const horizontal = horizontalRef.current;
+        const sections = sectionsRef.current;
+
+        let scrollTween = gsap.to(sections,{
+            xPercent: -120 * (sections.length - 1),
+            ease:"none",
+            scrollTrigger:{
+            trigger:horizontal,
+            start:"top 56px",
+            end:() => "+=" + horizontal.offsetWidth,
+            pin:true,
+            scrub:1,
+            invalidateOnRefresh:true,
+            anticipatePin:1,
+        }  
+    })
+
+        return() => {
+            scrollTween.kill();
+        };
+    },[]);
+
     return (
-        <section id="port">
+        <section id="port" ref={horizontalRef}>
             <div className="port__inner">
                 <div className="port__title">
                     portfolio<em>포폴 작업물</em>
                 </div>
                 <div className="port__wrap">
                     {portText.map((port,key)=>(
-                    <article className={`port__item p${key + 1}`} key={key}>
+                    <article 
+                    className={`port__item p${key + 1}`} 
+                    key={key}
+                    ref={(el) => (sectionsRef.current[key] = el)
+                    }>
                         <span className="num">{port.num}</span>
                         <a href={port.code} target="_black" className="img">
                             <img src={port.img} alt={port.name} />
